@@ -22,6 +22,7 @@ public class BaseTests {
         homePage = new HomePage(driver);
         driver.get(readDataFromJson.readJsonFile().URL);
 
+
     }
 
     @AfterClass
