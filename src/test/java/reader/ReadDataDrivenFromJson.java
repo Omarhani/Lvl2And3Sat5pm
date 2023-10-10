@@ -29,6 +29,7 @@ public class ReadDataDrivenFromJson {
 
             arr[i] = user+","+password;
 
+
         }
         return arr;
     }
@@ -38,10 +39,5 @@ public class ReadDataDrivenFromJson {
     public String[] testDataForSuccessfulLogin() throws IOException, ParseException {
         return readJson(successfulLogin);
     }
-
-
-
-
-
 
 }

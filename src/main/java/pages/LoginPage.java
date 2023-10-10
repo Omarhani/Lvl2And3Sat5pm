@@ -27,4 +27,10 @@ public class LoginPage extends MethodHandles {
         click(loginButton);
     }
 
+    public void loginFeature(String username,String password){
+        insertUsername(username);
+        insertPassword(password);
+        clickOnLoginButton();
+    }
+
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login Tests" >
+    <test name="Login Test With chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="login.LoginTests"></class>
+<!--            <class name="login.LoginTests2"></class>-->
+
+        </classes>
+    </test>
+
+<!--    <test name="Condition2" >-->
+<!--        <parameter name="browser" value="headlessfirefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="login.LoginTests"></class>-->
+<!--            <class name="login.LoginTests2"></class>-->
+<!--            <class name="login.LoginTests3"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>

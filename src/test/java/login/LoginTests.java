@@ -6,11 +6,14 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import reader.ReadDataDrivenFromJson;
+import reader.ReadDataFromJson;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class LoginTests extends BaseTests {
     ReadDataDrivenFromJson readDataDrivenFromJson;
+    ReadDataFromJson readDataFromJson;
 
     @DataProvider
     public Object[] testDataForSuccessfulLogin() throws IOException, ParseException {
@@ -23,12 +26,17 @@ public class LoginTests extends BaseTests {
 
 
     @Test(dataProvider = "testDataForSuccessfulLogin")
-    public void t(String data){
-        String users[]=data.split(",");
-
+    public void t1(String data) throws FileNotFoundException {
+//        String users[]=data.split(",");
+//
+//        LoginPage loginPage =homePage.clickOnLoginLink();
+//        loginPage.insertUsername(users[0]);
+//        loginPage.insertPassword(users[1]);
+        readDataFromJson = new ReadDataFromJson();
         LoginPage loginPage =homePage.clickOnLoginLink();
-        loginPage.insertUsername(users[0]);
-        loginPage.insertPassword(users[1]);
+        loginPage.insertUsername(readDataFromJson.readJsonFile().Login.ValidCredentials.Username);
+        loginPage.insertPassword(readDataFromJson.readJsonFile().Login.ValidCredentials.Password);
+
     }
 
 
