@@ -1,9 +1,10 @@
 {
   "URL" : "https://demo.nopcommerce.com/",
+  "ValidationMessage": "Thank you",
   "Login" : {
     "ValidCredentials" : {
-      "Username" : "Omar",
-      "Password" : "123"
+      "Username" : "omarhani422016@gmail.com",
+      "Password" : "Testest123!"
     },
     "InvalidCredentials": {
       "InvalidUsername": {

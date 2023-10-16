@@ -11,6 +11,7 @@ import pages.HomePage;
 import reader.ReadDataFromJson;
 import utils.ScreenRecorderUtil;
 import java.lang.reflect.Method;
+import java.time.Duration;
 
 public class BaseTests {
 
@@ -23,7 +24,9 @@ public class BaseTests {
     public void setUp(String browser) {
 //        readDataFromJson = new ReadDataFromJson();
         setUpBrowser(browser);
-
+        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         homePage = new HomePage(driver);
     }
     @BeforeMethod
@@ -41,7 +44,7 @@ public class BaseTests {
         }
         else if (browser.equalsIgnoreCase("headlessChrome")){
             ChromeOptions options = new ChromeOptions();
-            options.setHeadless(true);
+//            options.setHeadless(true);
             driver = new ChromeDriver(options);
         }
         else if (browser.equalsIgnoreCase("firefox")) {
@@ -49,7 +52,7 @@ public class BaseTests {
         }
         else if (browser.equalsIgnoreCase("headlessFirefox")) {
             FirefoxOptions options = new FirefoxOptions();
-            options.setHeadless(true);
+//            options.setHeadless(true);
             driver = new FirefoxDriver(options);
         }
     }
